@@ -1,2 +1,1 @@
-# HW
-Homeworks in java
+# Java homework
