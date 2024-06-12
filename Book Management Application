@@ -1,0 +1,59 @@
+```
+
+import java.util.ArrayList;
+import java.util.stream.Collectors;
+import java.util.Scanner;
+
+public class Main {
+    
+    public static void main(String[] args) {
+        var bookList = new ArrayList<String>();
+        var scanner = new Scanner(System.in);
+        
+        while (true) {
+            System.out.println("Write A to add, R to remove books from list or exit to stop: ");
+        var item = scanner.nextLine();
+            
+
+        if(item.equals("exit")){
+            System.out.println("You exited the program!"); 
+            break;
+            }
+        else if(item.equals("A")){
+            System.out.println("Please write the book's name: ");
+            String titleToAdd = scanner.nextLine();
+            var adding = bookList.add(titleToAdd); 
+        if(adding == true){
+            System.out.println(titleToAdd + " has been added to the book list");
+        }
+
+        }
+        else if(item.equals("R")){ 
+            System.out.println("Please write the book's name you want to remove: ");
+       
+            String titleToRemove = scanner.nextLine(); 
+        var removing =                             
+            bookList.remove(titleToRemove);
+        if(removing == true) {
+            System.out.println("Book removed: " + titleToRemove);
+            }
+            else {
+            System.out.println("Book not found: " + titleToRemove);
+            }
+            
+      } 
+        else { 
+            System.out.println("Input not found!"); 
+      }
+        printArrayList(bookList);
+        }
+    }
+  public static void printArrayList(ArrayList<String> books) {
+            System.out.println("The book list:");
+        
+        for (String book : books) {
+            System.out.println(book);
+        }
+    }
+}
+   ```
